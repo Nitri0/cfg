@@ -1,0 +1,58 @@
+{% extends "homepage.html" %}
+{% load i18n %}
+{% load bootstrap_tags %}
+{% load url from future %}
+
+{% block head_title %}{% trans "Registro de Plan de Inversion" %}{% endblock %}
+
+{% block body_base %}
+     <div class="container">
+    {% include "_messages.html" %}
+		{% block body %}
+		<h1>{% trans "Registrar plan de Inversion" %}</h1>
+     		{%block contenido%}
+        	<div class="hero-unit">
+    
+        		<form class="form-horizontal" action="add_inversion" method="post">
+        		<fieldset>
+        		   {% csrf_token %}
+            		{{ form|as_bootstrap }}
+            		 <div class="control-group">
+			    		<label class="control-label" for="inputCorreo">Correo Electronico</label>
+			    		<div class="controls">
+						      <input type="text"id="inputCorreo" placeholder="Type something…">
+						</div>
+					</div>
+            		 <div class="control-group">
+			    		<label class="control-label" for="inputNombrePlan">Nombre del Plan</label>
+			    		<div class="controls">
+						      <textarea id="inputNombrePlan" rows="3"></textarea>
+						</div>
+					</div>
+						  
+					<div class="control-group">
+						<label class="control-label" for="inputDescripcionPlan">Descripcion del Plan</label>
+						<div class="controls">
+						   <textarea rows="3" id="inputDescripcionPlan"></textarea>
+						</div>
+					 </div>
+						  
+					<div class="control-group">
+					 	<div class="controls">
+						    <button type="submit" class="btn">Sign in</button>
+						  </div>
+					</div>
+         		
+	</form>
+</div>
+
+                
+                {% endblock %}
+ 		{% endblock %}
+    </div>
+{% endblock %}
+
+/*
+form.formInversion
+
+*/

@@ -1,0 +1,50 @@
+{% extends "theme_bootstrap/banner_base.html" %}
+{% load i18n %}
+{% block head_title %}{% trans "CFG" %}{% endblock %}
+{% block body_class %}home{% endblock %}
+    {% block topbar_base %}
+    {% block navegacion %}
+		<div class="navbar {% block navbar_class %}navbar-fixed-top navbar-inverse{% endblock %}">
+              <div class="navbar-inner">
+                <div class="container">
+                  <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </a>
+                  {% block site_brand %}<a class="brand" href="{% url "home" %}">{{ SITE_NAME }}</a>{% endblock %}
+                  <div class="nav-collapse collapse navbar-responsive-collapse">
+                    <ul class="nav">
+                     {% block site_plan %}<li><a href="{% url "plan" %}">Plan de Inversion</a></li>{% endblock %}
+                      <li class="active"><a href="#">ejemplo</a></li>                     
+                      <li><a href="#">Link</a></li>
+                    </ul>
+                    <form class="navbar-search pull-left" action="">
+                      <input type="text" class="search-query span2" placeholder="Search">
+                    </form>
+                    <ul class="nav pull-right">
+                      <li><a href="#">Link</a></li>
+                      <li class="divider-vertical"></li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Cambiar clave</a></li>
+                          <li><a href="#">opcion 2</a></li>
+                          <li class="divider"></li>
+                          <li><a href="#">Cerrar Sesion</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div><!-- /.nav-collapse -->
+                </div>
+              </div><!-- /navbar-inner -->
+            </div>
+            
+        {% endblock %}
+{% endblock %}
+ {% block footer_base %}
+    	{% include "site_base.html" %}
+ {% endblock %}
+
+
+

@@ -1,0 +1,13 @@
+{% extends "theme_base.html" %}
+
+{# remove to bring back topbar #}
+{% block topbar_base %}{% endblock %}
+
+{% block footer %}
+    {% load i18n %}
+    <div class="container">
+    	<div class="legal">
+        {% trans "&copy; 2013 &lt;Edwin C.A&gt;" %}
+    	</div>
+    </div>
+{% endblock %}
